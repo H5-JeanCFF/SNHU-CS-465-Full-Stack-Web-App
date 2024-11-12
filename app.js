@@ -7,11 +7,20 @@ var logger = require('morgan');
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var travelRouter = require('./app_server/routes/travel');
+const { handlebars } = require('hbs');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
+
+// register handlebars partials
+const fs = require('fs');
+
+// Register each partial in the partials directory
+handlebars.registerPartial('header', fs.readFileSync(path.join(__dirname, 'app_server', 'views', 'partials', 'header.hbs'), 'utf8'));
+handlebars.registerPartial('footer', fs.readFileSync(path.join(__dirname, 'app_server', 'views', 'partials', 'footer.hbs'), 'utf8'));
+
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
