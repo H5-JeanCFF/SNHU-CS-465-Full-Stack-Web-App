@@ -1,4 +1,4 @@
-/* GET travel view */
+/* GET index view */
 const index = (req, res) => {
     res.render('index', {title: "Travlr Getaways"});
 
