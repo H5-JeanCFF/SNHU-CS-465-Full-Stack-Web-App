@@ -14,6 +14,9 @@ var aboutRouter = require('./app_server/routes/about');
 var contactRouter = require('./app_server/routes/contact');
 var apiRouter = require('./app_api/routes/index');
 
+// Bring in the database
+require('./app_api/models/db');
+
 const { handlebars } = require('hbs');
 
 var app = express();
