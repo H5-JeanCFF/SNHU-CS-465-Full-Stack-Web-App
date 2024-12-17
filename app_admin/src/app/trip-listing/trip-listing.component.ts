@@ -45,8 +45,6 @@ export class TripListingComponent implements OnInit {
         },
         error :(error:any) => {
           console.log('Error: ' + error);
-          console.error('Detailed Error: ', JSON.stringify(error, null, 2));
-        this.message = 'An error occurred while fetching trips.';
         }
       })
   }

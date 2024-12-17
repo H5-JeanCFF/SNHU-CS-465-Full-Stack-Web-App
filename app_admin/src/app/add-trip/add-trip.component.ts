@@ -45,6 +45,7 @@ export class AddTripComponent implements OnInit {
         },
         error: (error: any) => {
           console.log('Error: ' + error);
+          
         },
       });
     }
